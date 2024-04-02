@@ -1,0 +1,41 @@
+vkpurge rm all
+
+
+
+might have to do
+ln -s /etc/sv/dhcpcd /var/service
+
+installing grub:
+xbps-install -Sy grub grub2_x86-64-efi
+
+
+Use zzz to suspend your system to RAM, or ZZZ to suspend to disk (hibernation). 
+To shutdown (power off) the system use shutdown -h now. To reboot, use 
+shutdown -r now or just reboot
+
+
+
+ Games:
+ install xboxdrv
+
+ Civ 6 launch options for freetype segfault - this disables the overlay:
+ LD_PRELOAD=/usr/lib/libfreetype.so.6 %command%
+
+ Deus ex:
+ install libidn-32bit libidn2-32bit librtmp-32bit
+
+ Battle.net
+ libldap-32bit gnutls-32bit
+
+ software to play with:
+ pmidi			Command line midi player for ALSA
+ ddgtk			GUI frontend for dd to create bootable ISO images for Linux
+
+After installing bootiso:
+ Some optional packages must be installed for additional functionality:
+ - mtools: mkdiskimage and syslinux support
+ - gptfdisk: GPT support
+ - efibootmgr: EFI support
+ - dosfstools: EFI support
+
+

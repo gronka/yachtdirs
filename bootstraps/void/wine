@@ -1,0 +1,31 @@
+=== Lutris ===
+esync: add the following at the bottom of /etc/security/limits.conf
+* hard nofile 1048576
+where * is your username
+
+https://github.com/lutris/docs/blob/master/WineDependencies.md
+^ only some of these are copied below
+xbps-install -S openal openal-32bit
+xbps-install -S v4l-utils v4l-utils-32bit
+xbps-install -S mpg123 mpg123-32bit
+xbps-install -S giflib giflib-32bit
+xbps-install -S libldap libldap-32bit
+xbps-install -S libpng libpng-32bit
+xbps-install -S libgpg-error libgpg-error-32bit
+xbps-install -S libxcomposite libxcomposite-32bit
+xbps-install -S libgcrypt libgcrypt-32bit
+
+Battle.net
+(no ntlm support) xbps-install -S smbclient
+use prime-run?
+
+league of legends
+xbps-install -Su libswresample-32bit
+
+
+overwatch
+dotnet40
+
+
+=== playonlinux ===
+xbps-install -Su gettext

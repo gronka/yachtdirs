@@ -1,0 +1,5 @@
+if $if_up; then
+	chronyc online
+elif $if_down; then
+	chronyc offline
+fi

@@ -1,0 +1,3 @@
+sudo xboxdrv --device-by-id 2f24:0091 --type xbox360 --device-name 'EasySMX ESM-9101' --silent
+
+sudo xboxdrv --device-by-id 2f24:00b7 --type xbox360 --device-name '   ESM GAME FOR WINDOWS 1.02' --silent
