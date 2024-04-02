@@ -1,0 +1,8 @@
+The default shell is zsh; change it with this
+chsh -s /bin/bash
+
+to create root-level dirs, add a line to /etc/synthetic.conf:
+yuga	Users/coal/projects/yuga
+
+
+

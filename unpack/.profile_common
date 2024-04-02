@@ -1,0 +1,553 @@
+ostype=$(uname)
+if [ $ostype == "Darwin" ]; then
+	export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
+	export PATH=$HOME/Library/Python/3.9/bin:$PATH
+	export ANDROID_HOME=$HOME/Library/Android/sdk
+	export CHROME_EXECUTABLE=$(which chromium 2>/dev/null)
+	#export CHROME_EXECUTABLE="/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
+	export CHROME_EXECUTABLE="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+else
+	# flutter
+	export ANDROID_HOME=$HOME/Android/Sdk
+	export CHROME_EXECUTABLE=$(which chromium 2>/dev/null)
+fi
+
+#/Applications/Android Studio.app/Contents/jre/Contents/Home
+
+#eval $(dircolors -b ~/.dir_colors)
+# enable color support of ls and also add handy aliases
+#if [ -x /usr/bin/dircolors ]; then
+    #test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    #alias ls='ls --color=auto'
+	#alias dir='dir --color=auto'
+	#alias vdir='vdir --color=auto'
+
+    #alias grep='grep --color=auto'
+    #alias fgrep='fgrep --color=auto'
+    #alias egrep='egrep --color=auto'
+#fi
+
+TERM=xterm
+
+# If there are multiple matches for completion, Tab should cycle through them
+bind 'TAB':menu-complete
+# Display a list of the matching files
+bind "set show-all-if-ambiguous on"
+# Perform partial completion on the first Tab press,
+# only start cycling full results on the second Tab press
+bind "set menu-complete-display-prefix on"
+
+# Turn off that "boop" sound when terminal fails to do something
+# Ubuntu startup
+if [ -f /etc/debian_version ]; then
+	bind 'set bell-style none'
+fi
+
+# fix qt scaling for hidpi for hidpi apps such as vlc
+export QT_AUTO_SCREEN_SCALE_FACTOR=0
+export QT_SCREEN_SCALE_FACTORS=1
+
+# Enable UTF-8
+export LC_ALL="en_US.UTF-8"
+
+export VISUAL="vim"
+export EDITOR="$VISUAL"
+alias v='/bin/vim'
+alias vim='nvim'
+alias urxvt=rxvt
+
+export FIGNORE=".g.dart:"
+
+# F indicates filetype
+# s gives size in blocks
+alias lss='ls -Fash --color=auto'
+alias lsl='ls -lFah --color=auto'
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='grep -E --color=auto'
+
+alias killqemu='sudo killall -9 qemu-system-x86_64'
+
+alias zk='cd ~/projects/zkrapz && workon zk'
+
+
+alias gkk='cd /gm/kub/kub'
+alias gkka='cd /gm/kub/kub/aks'
+alias gkkb='cd /gm/kub/kub/bootstraps'
+alias gkks='cd /gm/kub/kub/scripts'
+alias gkkt='cd /gm/kub/kub/tethys'
+alias gkky='cd /gm/kub/kub/yamls'
+
+alias gt='cd /gm/tethys'
+alias gtd='cd /gm/tethys/docker'
+
+# corkyy
+alias cob='cd /gm/corkyy'
+alias cul='cd /gm/corkyy/cui/cui_lib/lib'
+alias culb='cd /gm/corkyy/cui/cui_lib/lib/bom'
+alias culc='cd /gm/corkyy/cui/cui_lib/lib/consts'
+alias culf='cd /gm/corkyy/cui/cui_lib/lib/fields'
+alias cull='cd /gm/corkyy/cui/cui_lib/lib/lad'
+alias culs='cd /gm/corkyy/cui/cui_lib/lib/services'
+alias culw='cd /gm/corkyy/cui/cui_lib/lib/widgets'
+alias culwb='cd /gm/corkyy/cui/cui_lib/lib/widgets/based'
+alias cuw='cd /gm/corkyy/cui/cui_web/lib'
+alias cuwr='cd /gm/corkyy/cui/cui_web/lib/router'
+alias cuww='cd /gm/corkyy/cui/cui_web/lib/widgets'
+alias cuwwb='cd /gm/corkyy/cui/cui_web/lib/widgets/based'
+
+
+alias ccl='cd /gm/corkyy/CorkyyApp/lib'
+alias cclc='cd /gm/corkyy/CorkyyApp/lib/config'
+alias cclm='cd /gm/corkyy/CorkyyApp/lib/models'
+alias cclr='cd /gm/corkyy/CorkyyApp/lib/router'
+alias ccls='cd /gm/corkyy/CorkyyApp/lib/screens'
+alias ccls='cd /gm/corkyy/CorkyyApp/lib/screens'
+alias cclsc='cd /gm/corkyy/CorkyyApp/lib/screens/companies'
+alias cclsh='cd /gm/corkyy/CorkyyApp/lib/screens/hire'
+alias cclsp='cd /gm/corkyy/CorkyyApp/lib/screens/post_a_job'
+alias cclss='cd /gm/corkyy/CorkyyApp/lib/screens/spotters'
+alias cclt='cd /gm/corkyy/CorkyyApp/lib/theme'
+alias cclw='cd /gm/corkyy/CorkyyApp/lib/widgets'
+
+
+# park ranger
+alias tt='cd /gm/the-sacred-timeline/src'
+alias ttb='cd /gm/the-sacred-timeline'
+
+alias rgb='cd /gm/ranger'
+alias rg='cd /gm/ranger/ranger'
+alias rgd='cd /gm/ranger/ranger/deployment'
+alias rgdd='cd /gm/ranger/ranger/deployment/database'
+alias rgg='cd /gm/ranger/ranger/go'
+alias rgga='cd /gm/ranger/ranger/go/api'
+alias rggac='cd /gm/ranger/ranger/go/api/cmd'
+alias rggar='cd /gm/ranger/ranger/go/api/routes'
+alias rggc='cd /gm/ranger/ranger/go/core'
+alias rggm='cd /gm/ranger/ranger/go/models'
+
+alias rgl='cd /gm/ranger/ranger/rg_lib/lib'
+alias rglb='cd /gm/ranger/ranger/rg_lib/lib/bom'
+alias rglc='cd /gm/ranger/ranger/rg_lib/lib/consts'
+alias rglf='cd /gm/ranger/ranger/rg_lib/lib/fields'
+alias rgll='cd /gm/ranger/ranger/rg_lib/lib/lad'
+alias rgls='cd /gm/ranger/ranger/rg_lib/lib/services'
+alias rglw='cd /gm/ranger/ranger/rg_lib/lib/widgets'
+alias rglwb='cd /gm/ranger/ranger/rg_lib/lib/widgets/based'
+alias rgm='cd /gm/ranger/ranger/rg_mobile/lib'
+alias rgw='cd /gm/ranger/ranger/rg_web/lib'
+alias rgwr='cd /gm/ranger/ranger/rg_web/lib/router'
+alias rgww='cd /gm/ranger/ranger/rg_web/lib/widgets'
+alias rgwwb='cd /gm/ranger/ranger/rg_web/lib/widgets/based'
+alias rgwwj='cd /gm/ranger/ranger/rg_web/lib/widgets/journal'
+alias rgwwp='cd /gm/ranger/ranger/rg_web/lib/widgets/property'
+alias rgwwr='cd /gm/ranger/ranger/rg_web/lib/widgets/ranger'
+alias rgwwt='cd /gm/ranger/ranger/rg_web/lib/widgets/tracker'
+
+alias rgr='cd /gm/ranger/ranger/react/src'
+alias rgrc='cd /gm/ranger/ranger/react/src/components'
+alias rgrl='cd /gm/ranger/ranger/react/src/lad'
+alias rgrs='cd /gm/ranger/ranger/react/src/services'
+
+alias rur='cd /gm/ranger/react/src'
+alias tok='cd /gm/ranger/figma2flutter/lib'
+
+# reddit review
+alias rr='cd /gm/rr/rapi'
+alias rrd='cd /gm/rr/rapi/deployment'
+alias rrdd='cd /gm/rr/rapi/deployment/database'
+alias rrg='cd /gm/rr/rapi/go'
+alias rrga='cd /gm/rr/rapi/go/api'
+alias rrgac='cd /gm/rr/rapi/go/api/cmd'
+alias rrgar='cd /gm/rr/rapi/go/api/routes'
+alias rrgas='cd /gm/rr/rapi/go/api/static'
+alias rrgat='cd /gm/rr/rapi/go/api/templates'
+alias rrgm='cd /gm/rr/rapi/go/models'
+alias rrp='cd /gm/rr/rapi/python/src/rapi && workon rr'
+alias rrr='cd /gm/rr/rapi/rext'
+
+
+# gui
+alias gu='cd /gm/gui/gui_lib'
+alias gul='cd /gm/gui/gui_lib/lib'
+alias gulc='cd /gm/gui/gui_lib/lib/consts'
+alias gulf='cd /gm/gui/gui_lib/lib/fields'
+alias gull='cd /gm/gui/gui_lib/lib/lad'
+alias gulw='cd /gm/gui/gui_lib/lib/widgets'
+alias gulwb='cd /gm/gui/gui_lib/lib/widgets/based'
+alias gus='cd /gm/gui//gui_lib/scripts'
+
+
+# pragma
+alias prb='cd /gm/taxed/taxed && workon pra'
+alias pr='cd /gm/taxed/taxed/src/taxed && workon pra'
+
+alias pu='cd /gm/pragma/pui'
+alias puw='cd /gm/pragma/pui/pui_web/lib'
+alias puww='cd /gm/pragma/pui/pui_web/lib/widgets'
+alias pul='cd /gm/pragma/pui/pui_lib/lib'
+alias pull='cd /gm/pragma/pui/pui_lib/lib/lad'
+alias pulw='cd /gm/pragma/pui/pui_lib/lib/widgets'
+
+
+# yuga
+alias yb='cd /gm/yuga'
+
+alias yp='cd /gm/yuga/yapi/src'
+alias ypc='cd /gm/yuga/yapi/src/cmd'
+alias ypcb='cd /gm/yuga/yapi/src/cmd/uy_brain'
+alias ypcbd='cd /gm/yuga/yapi/src/cmd/uy_brain/database'
+alias ypcbdi='cd /gm/yuga/yapi/src/cmd/uy_brain/database/initdb'
+alias ypb='cd /gm/yuga/yapi/src/uy_brain'
+alias ype='cd /gm/yuga/yapi/src/event'
+alias ypm='cd /gm/yuga/yapi/src/models'
+alias ypo='cd /gm/yuga/yapi/src/org'
+alias ypp='cd /gm/yuga/yapi/src/policy'
+alias yps='cd /gm/yuga/yapi/src/surfer'
+alias ypu='cd /gm/yuga/yapi/src/uy'
+alias ypv='cd /gm/yuga/yapi/src/venue'
+alias ypx='cd /gm/yuga/yapi/src/xc'
+
+alias yu='cd /gm/yuga/yuri'
+alias yuls='cd /gm/yuga/yuri/yuri_lib/scripts'
+alias yul='cd /gm/yuga/yuri/yuri_lib/lib'
+alias yulb='cd /gm/yuga/yuri/yuri_lib/lib/bom'
+alias yulc='cd /gm/yuga/yuri/yuri_lib/lib/consts'
+alias yulf='cd /gm/yuga/yuri/yuri_lib/lib/fields'
+alias yull='cd /gm/yuga/yuri/yuri_lib/lib/lad'
+alias yulp='cd /gm/yuga/yuri/yuri_lib/lib/pad'
+alias yulw='cd /gm/yuga/yuri/yuri_lib/lib/widgets'
+alias yulwb='cd /gm/yuga/yuri/yuri_lib/lib/widgets/based'
+
+alias yuwb='cd /gm/yuga/yuri/yuri_web'
+alias yuw='cd /gm/yuga/yuri/yuri_web/lib'
+alias yuww='cd /gm/yuga/yuri/yuri_web/lib/widgets'
+alias yuwwe='cd /gm/yuga/yuri/yuri_web/widgets/event'
+alias yuwwv='cd /gm/yuga/yuri/yuri_web/widgets/venue'
+alias yuwr='cd /gm/yuga/yuri/yuri_web/router'
+alias yuws='cd /gm/yuga/yuri/yuri_web/scripts'
+alias yuwt='cd /gm/yuga/yuri/yuri_web/test_driver'
+
+alias yumb='cd /gm/yuga/yuri/yuri_mobile'
+alias yum='cd /gm/yuga/yuri/yuri_mobile/lib'
+alias yumr='cd /gm/yuga/yuri/yuri_mobile/lib/router'
+alias yums='cd /gm/yuga/yuri/yuri_mobile/scripts'
+alias yumt='cd /gm/yuga/yuri/yuri_mobile/test_driver'
+alias yumw='cd /gm/yuga/yuri/yuri_mobile/lib/widgets'
+alias yumwb='cd /gm/yuga/yuri/yuri_mobile/lib/widgets/based'
+alias yumwe='cd /gm/yuga/yuri/yuri_mobile/lib/widgets/event'
+alias yumwm='cd /gm/yuga/yuri/yuri_mobile/lib/widgets/menu'
+alias yumwme='cd /gm/yuga/yuri/yuri_mobile/lib/widgets/menu/event'
+alias yumwmo='cd /gm/yuga/yuri/yuri_mobile/lib/widgets/menu/org'
+alias yumwms='cd /gm/yuga/yuri/yuri_mobile/lib/widgets/menu/surfer'
+alias yumwmv='cd /gm/yuga/yuri/yuri_mobile/lib/widgets/menu/venue'
+
+alias byp='cd /gm/yuga/backup_yapi'
+
+alias byumb='cd /gm/yuga/backup_yuga'
+alias byum='cd /gm/yuga/backup_yuga/lib'
+alias byumw='cd /gm/yuga/backup_yuga/lib/widgets'
+alias byumwb='cd /gm/yuga/backup_yuga/lib/widgets/based'
+alias byumwe='cd /gm/yuga/backup_yuga/lib/widgets/event'
+alias byumws='cd /gm/yuga/backup_yuga/lib/widgets/surfer'
+alias byumwv='cd /gm/yuga/backup_yuga/lib/widgets/venue'
+
+
+# taxed
+alias tab='cd /gm/taxed/taxed && workon tax'
+alias ta='cd /gm/taxed/taxed/src/taxed && workon tax'
+alias tap='cd /gm/taxed/taxed/src/taxed/processing && workon tax'
+alias tau='cd /gm/taxed/taxed/src/taxed/users && workon tax'
+
+alias ta2='cd /gm/taxed/taxedapi && workon tax2'
+alias tap2='cd /gm/taxed/taxedapi/processing && workon tax2'
+alias tau2='cd /gm/taxed/taxedapi/users && workon tax2'
+
+alias tu='cd /gm/taxed/tui'
+alias tuw='cd /gm/taxed/tui/tui_web/lib'
+alias tuwr='cd /gm/taxed/tui/tui_web/lib/router'
+alias tuww='cd /gm/taxed/tui/tui_web/lib/widgets'
+alias tuwwc='cd /gm/taxed/tui/tui_web/lib/widgets/challenge'
+alias tuwwp='cd /gm/taxed/tui/tui_web/lib/widgets/payment'
+alias tuwpp='cd /gm/taxed/tui/tui_web/lib/widgets/payment/pay_form'
+alias tuwws='cd /gm/taxed/tui/tui_web/lib/widgets/surfer'
+
+alias tul='cd /gm/taxed/tui/tui_lib/lib'
+alias tull='cd /gm/taxed/tui/tui_lib/lib/lad'
+alias tulw='cd /gm/taxed/tui/tui_lib/lib/widgets'
+alias tulwb='cd /gm/taxed/tui/tui_lib/lib/widgets/based'
+
+
+# lace
+alias lace='cd /gm/cisc/lace && workon lace'
+alias la='cd /gm/cisc/lace/api && workon lace'
+alias las='cd /gm/cisc/lace/api/scripts && workon lace'
+alias lar='cd /gm/cisc/lace/api/src/laceapi/api/routes && workon lace'
+alias lam='cd /gm/cisc/lace/api/src/laceapi/models && workon lace'
+alias law='cd /gm/cisc/lace/api/src/laceapi/worker && workon lace'
+alias lc='cd /gm/cisc/lace/chauffeur && workon lace'
+alias le='cd /gm/cisc/lace/evaluator && workon lace'
+alias lg='cd /gm/cisc/lace/gatherer && workon lace'
+alias lj='cd /gm/cisc/lace/jobs && workon lace'
+alias ll='cd /gm/cisc/lace/lacelib && workon lace'
+alias lno='cd /gm/cisc/lace/notifier && workon lace'
+alias lo='cd /gm/cisc/lace/operations && workon lace'
+alias lp='cd /gm/cisc/lace/prepper && workon lace'
+alias lw='cd /gm/cisc/lace/web && workon lace'
+
+alias jj='cd ~/projects/junk && workon junk'
+
+alias ba='cd ~/projects/bapi'
+alias bo='cd ~/projects/bolt/src'
+alias bt='cd ~/projects/btests/src/btests && workon btests'
+alias bl='cd ~/projects/blutter/lib'
+alias op='cd ~/projects/open/lib'
+
+alias fido='cd ~/projects/fido'
+alias fip='cd ~/projects/fido/packages'
+alias fipf='cd ~/projects/fido/packages/fido'
+
+alias fr='cd ~/projects/Friday_2/src/friday && workon friday'
+alias frb='cd ~/projects/Friday_2 && workon friday'
+
+alias fo='cd /gm/fridayy/operations'
+alias fos='cd /gm/fridayy/operations/scripts'
+alias un='cd /gm/fridayy/uno'
+alias unc='cd /gm/fridayy/uno/cmd'
+alias unca='cd /gm/fridayy/uno/cmd/uf_aim'
+alias uncad='cd /gm/fridayy/uno/cmd/uf_aim/database'
+alias uncb='cd /gm/fridayy/uno/cmd/uf_border'
+alias uncm='cd /gm/fridayy/uno/cmd/uf_maha'
+alias uncmd='cd /gm/fridayy/uno/cmd/uf_maha/database'
+alias unco='cd /gm/fridayy/uno/cmd/uf_order'
+alias uncod='cd /gm/fridayy/uno/cmd/uf_order/database'
+alias uncp='cd /gm/fridayy/uno/cmd/uf_public'
+alias uncu='cd /gm/fridayy/uno/cmd/uf_user'
+alias uncud='cd /gm/fridayy/uno/cmd/uf_user/database'
+
+alias unf='cd /gm/fridayy/uno/uf'
+alias uf=unf
+alias una='cd /gm/fridayy/uno/uf_aim'
+alias ua=una
+alias unb='cd /gm/fridayy/uno/uf_border'
+alias ub=unb
+alias unm='cd /gm/fridayy/uno/uf_maha'
+alias um=unm
+alias uno='cd /gm/fridayy/uno/uf_order'
+alias uo=uno
+alias unp='cd /gm/fridayy/uno/uf_public'
+alias up=unp
+alias unt='cd /gm/fridayy/uno/ut'
+alias ut=unt
+alias unu='cd /gm/fridayy/uno/uf_user'
+alias uu=unu
+alias unx='cd /gm/fridayy/uno/uxt'
+alias ux=unx
+alias unz='cd /gm/fridayy/uno/zinc'
+alias uz=unz
+
+#export GOPRIVATE=gitlab.com/textfridayy/*
+alias zkubeinitpal='export KUBECONFIG=/gm/sh/pal-kubeconfig.yaml'
+alias zkubeinitracher='export KUBECONFIG=~/.kube/config-racher.yaml'
+
+alias fu='cd /gm/fridayy/funo'
+alias fl='cd /gm/fridayy/funo/fui_lib/lib'
+alias fll='cd /gm/fridayy/funo/fui_lib/lib/lad'
+alias fls='cd /gm/fridayy/funo/fui_lib/lib/services'
+alias flw='cd /gm/fridayy/funo/fui_lib/lib/widgets'
+alias flwb='cd /gm/fridayy/funo/fui_lib/lib/widgets/based'
+alias flb='cd /gm/fridayy/funo/fui_lib'
+alias fw='cd /gm/fridayy/funo/fui_web/lib'
+alias fww='cd /gm/fridayy/funo/fui_web/lib/widgets'
+alias fwb='cd /gm/fridayy/funo/fui_web'
+
+alias pa='cd /gm/pushboi/papi/src/papi && workon papi'
+alias pab='cd /gm/pushboi/papi && workon papi'
+alias par='cd /gm/pushboi/papi/src/papi/routes && workon papi'
+alias pas='cd /gm/pushboi/papi/src/papi/services && workon papi'
+
+alias pb='cd /gm/pushboi/pushboy/lib'
+alias pbb='cd /gm/pushboi/pushboy'
+alias pbs='cd /gm/pushboi/pushboy/scripts'
+alias pbk='cd /gm/pushboi/pushboy/lib/king'
+alias pbw='cd /gm/pushboi/pushboy/lib/widgets'
+alias pbwr='cd /gm/pushboi/pushboy/lib/widgets/router'
+
+alias pw='cd /gm/pushboi/pushboy_web/lib'
+alias pwb='cd /gm/pushboi/pushboy_web'
+alias pws='cd /gm/pushboi/pushboy_web/scripts'
+alias pwk='cd /gm/pushboi/pushboy_web/lib/king'
+alias pww='cd /gm/pushboi/pushboy_web/lib/widgets'
+alias pwwb='cd /gm/pushboi/pushboy_web/lib/widgets/based'
+alias pwwd='cd /gm/pushboi/pushboy_web/lib/widgets/developer'
+alias pwwp='cd /gm/pushboi/pushboy_web/lib/widgets/projects'
+alias pwwr='cd /gm/pushboi/pushboy_web/lib/widgets/router'
+
+alias pbl='cd /gm/pushboi/pushboy_lib/lib'
+alias pll='cd /gm/pushboi/pushboy_lib/lib'
+alias pllc='cd /gm/pushboi/pushboy_lib/lib/consts'
+alias plld='cd /gm/pushboi/pushboy_lib/lib/dad'
+alias plls='cd /gm/pushboi/pushboy_lib/lib/services'
+alias pllu='cd /gm/pushboi/pushboy_lib/lib/utils'
+alias pllw='cd /gm/pushboi/pushboy_lib/lib/widgets'
+alias pllwb='cd /gm/pushboi/pushboy_lib/lib/widgets/based'
+
+alias cdbscrap='cd ~/projects/bscrap'
+alias bs='cdbscrap'
+#alias cdbatabae='cd ~/projects/batabae'
+#alias bt='cdbatabae'
+
+export PROJECT_HOME="$HOME/projects"
+export PATH=${HOME}/.local/bin:$PATH
+export PATH=${HOME}/.cargo/bin:$PATH
+
+export WINEPREFIX=~/.wine64
+export WINEARCH=win64
+
+# make global node installs local
+export PATH=${HOME}/.nvm:$PATH
+# Unset manpath so we can inherit from /etc/manpath via the `manpath`
+# command
+#unset MANPATH # delete if you already modified MANPATH elsewhere in your config
+#export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+
+export GOPATH=$HOME/projects
+export GOBIN=$GOPATH/bin
+export PATH=$GOBIN:$PATH
+export PATH=$HOME/apps/go/bin:$PATH
+
+# Development
+export PATH=$ANDROID_HOME/emulator:$PATH
+export PATH=$ANDROID_HOME/tools:$PATH
+export PATH=$ANDROID_HOME/tools/bin:$PATH
+export PATH=$ANDROID_HOME/platform-tools:$PATH
+export PATH=$HOME/apps/android-studio/bin:$PATH
+export PATH=$HOME/apps/bin:$PATH
+export PATH=$HOME/apps/flutter/bin:$PATH
+export PATH=$HOME/apps/vscode/bin:$PATH
+export PATH=$HOME/.pub-cache/bin:$PATH
+export PATH=/usr/local/go/bin:$PATH
+
+export DOTNET_ROOT=$HOME/apps/dotnet
+export PATH=$DOTNET_ROOT:$DOTNET_ROOT/tools:$PATH
+
+# Backup paths (in case installation from repo is broken)
+export PATH=$HOME/apps/node/bin:$PATH
+
+# ruby
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init - 2>/dev/null)"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+
+# Redhat openshift
+export PATH=$HOME/.crc/bin/oc:$PATH
+
+# local python
+export PATH=$HOME/.local/bin:$PATH
+
+# dotfiles bin
+export PATH=$HOME/dotfiles/bin:$PATH
+
+# deno
+export DENO_INSTALL="$HOME/deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
+myyoutube() {
+	yt-dlp $1 -o '~/Downloads/yc/%(uploader)s/%(upload_date)s %(title)s-%(id)s.%(ext)s' --write-thumbnail --write-description --cookies '~/junk/yt_cookies.txt'
+}
+
+kmyyoutube() {
+	yt-dlp $1 -o '~/Downloads/yc/%(uploader)s/%(upload_date)s %(title)s-%(id)s.%(ext)s' --write-thumbnail --write-description --cookies '~/junk/yt_cookies.txt' --extractor-args youtubetab:skip=authcheck
+}
+
+bmyyoutube() {
+	yt-dlp $1 -o '~/Downloads/yc/%(uploader)s/%(upload_date)s %(id)s.%(ext)s' --write-thumbnail --write-description
+}
+
+emyyoutube() {
+	yt-dlp $1 -o '~/Downloads/yc/%(uploader)s/%(upload_date)s %(title)s-%(id)s.%(ext)s' --write-thumbnail --ignore-errors
+}
+
+mmyyoutube() {
+	yt-dlp $1 -o '~/Downloads/yc/%(uploader)s/%(upload_date)s %(title)s-%(id)s.%(ext)s' --ignore-errors -x --audio-format mp3 
+}
+
+amyyoutube() {
+	yt-dlp $1 -f bestaudio -o '~/Downloads/yc/%(uploader)s/%(upload_date)s %(title)s-%(id)s.%(ext)s' --ignore-errors --extract-audio --embed-thumbnail --add-metadata $1
+}
+
+smyyoutube() {
+	yt-dlp $1 -o '~/Downloads/yc/%(uploader)s/%(upload_date)s %(title)s-%(id)s.%(ext)s' --write-thumbnail --write-description --all-sub
+}
+
+fff() {
+	echo "--->executing on $1"
+	input="$(pwd)/${1}"
+	output="$(pwd)/${1%.*}-ff.mkv"
+	echo $input
+	echo $output
+	ffmpeg \
+		-i "$input" \
+		-c:v libx265 \
+		-crf 26 \
+		-pix_fmt yuv420p10le \
+		-c:a libopus \
+		-b:a 96k \
+		-threads 4 \
+		"$output"
+}
+
+sshl() {
+	if [ $# -eq 2 ]; then
+		ssh -p $2 192.168.0.$1
+	else
+		ssh 192.168.0.$1
+	fi
+}
+
+
+###
+## python virtual envs
+###
+workon() {
+	deactivate > /dev/null 2>&1 || true
+	. $HOME/.virtualenvs/$1/bin/activate
+}
+
+mkvirtualenv() {
+	deactivate > /dev/null 2>&1 || true
+	python3 -m venv $HOME/.virtualenvs/$1
+}
+
+if [ ! -d $HOME/.virtualenvs/py ]; then
+	mkdir -p "$HOME/.virtualenvs"
+	mkvirtualenv py
+fi
+. "$HOME/.virtualenvs/py/bin/activate"
+
+#. /etc/profile.d/bash-completion.sh
+
+# kubectl completion requires bash-completion
+if type "kubectl" &> /dev/null; then
+	. <(kubectl completion bash) 
+fi
+# To point your shell to minikube's docker-daemon, run:
+#eval $(minikube -p minikube docker-env)
+
+if [ -f ~/dlang/dmd-2.072.0/activate ]; then
+	. ~/dlang/dmd-2.072.0/activate
+fi
+
+if [ -f $HOME/.cargo/env ]; then
+	. "$HOME/.cargo/env"
+fi
+
+. $HOME/dotfiles/unpack/git-completion.bash
+. $HOME/dotfiles/unpack/docker-completion.bash
+
+if [ -f $HOME/.profile_local ]; then
+	. $HOME/.profile_local
+fi

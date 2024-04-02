@@ -1,0 +1,12 @@
+!keycode  66 = Caps_Lock NoSymbol Caps_Lock
+clear lock
+keycode  66 = F7 F7 F7 F7 F7 F7 XF86Switch_VT_7
+
+!keycode  37 = Control_L NoSymbol Control_L
+!keycode  64 = Alt_L Meta_L Alt_L Meta_L
+clear control
+clear mod1
+keycode  64 = Control_L NoSymbol Control_L
+keycode  37 = Alt_L Meta_L Alt_L Meta_L
+add control = Control_L Control_R
+add mod1 = Alt_L Meta_L

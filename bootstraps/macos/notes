@@ -1,0 +1,5 @@
+to change shells:
+chsh -s /bin/bash
+
+list shells:
+cat /etc/shells
