@@ -1,0 +1,16 @@
+#!/bin/bash
+
+hostname=$(more /etc/hostname)
+
+#xrdb -merge ~/.Xdefaults
+lxpanel &
+#picom &
+
+#if grep -qE "(Microsoft|WSL)" /proc/version &> /dev/null; then
+#fi
+
+if [ "$hostname" == "voidx13" ]; then
+	$HOME/.dotfiles/scripts/display/scale-xps13.sh
+fi
+
+#~/.dotfiles/scripts/xps15-void-scale.sh

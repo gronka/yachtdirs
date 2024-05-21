@@ -1,0 +1,17 @@
+{
+	"coc.preferences.formatOnSaveFiletypes": [                                  
+		//"dart",
+	],
+	"diagnostic.refreshOnInsertMode": true,
+
+	"flutter.lsp.initialization.onlyAnalyzeProjectsWithOpenFiles": false,
+	"flutter.provider.hot-reload": false,
+	"flutter.trace.server": "verbose",
+
+	"pyright.linting.mypyEnabled": true,
+	//"pyright.enable": false,
+
+	"yaml.schemas": {
+		"kubernetes": "*.yaml",
+	}
+}
