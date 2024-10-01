@@ -59,7 +59,7 @@ lsp_zero.on_attach(function(client, bufnr)
 	vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<cr>', opts)
 
 	-- format on save
-	vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
+	-- vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
 
 	-- updatetime affects CursorHold
 	vim.o.updatetime = 250

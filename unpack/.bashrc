@@ -13,7 +13,11 @@ if [ $ostype == "Cygwin" ]; then
 fi
 
 if [ $ostype == "Darwin" ]; then
-	eval "$(/opt/homebrew/bin/brew shellenv)"
+	if [ -f /opt/Homebrew/bin/brew ]; then
+		eval "$(/opt/Homebrew/bin/brew shellenv)"
+	elif [ -f /usr/local/Homebrew/bin/brew ]; then
+		eval "$(/usr/local/Homebrew/bin/brew shellenv)"
+	fi
 fi
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
@@ -107,7 +111,6 @@ fi
 if [ "$PS1" ]; then
 	complete -cf sudo
 fi
-source ~/.profile_common
 
 #source /etc/profile.d/bash-completion.sh
 
