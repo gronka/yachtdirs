@@ -6,7 +6,6 @@ echo $DOTFILEDIR
 echo $HOME
 echo $ostype
 
-mkdir -p $HOME/.config/nvim
 
 echo setting .gitignore_global
 git config --global core.excludesfile ~/.gitignore_global
@@ -16,8 +15,11 @@ echo linking bash
 ln -sf $DOTFILEDIR/.bash_profile $HOME/.bash_profile
 ln -sf $DOTFILEDIR/.bashrc $HOME/.bashrc
 ln -sf $DOTFILEDIR/.profile_common $HOME/.profile_common
-mkdir -p $HOME/.config/nvim/after/plugin
-ln -sfT $DOTFILEDIR/.config/nvim/after/plugin/lsp.lua $HOME/.config/nvim/after/plugin/lsp.lua
+
+# mkdir -p $HOME/.config/nvim
+# mkdir -p $HOME/.config/nvim/after/plugin
+# ln -sfT $DOTFILEDIR/.config/nvim/after/plugin/lsp.lua $HOME/.config/nvim/after/plugin/lsp.lua
+ln -sfT $DOTFILEDIR/.config/nvim/ $HOME/.config/nvim/
 
 if [[ $ostype == "Linux" ]] || [[ $ostype == *"CYGWIN"* ]]; then
 	echo Linux detected!
