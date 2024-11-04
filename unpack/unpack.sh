@@ -19,7 +19,7 @@ ln -sf $DOTFILEDIR/.profile_common $HOME/.profile_common
 # mkdir -p $HOME/.config/nvim
 # mkdir -p $HOME/.config/nvim/after/plugin
 # ln -sfT $DOTFILEDIR/.config/nvim/after/plugin/lsp.lua $HOME/.config/nvim/after/plugin/lsp.lua
-ln -sfT $DOTFILEDIR/.config/nvim/ $HOME/.config/nvim/
+ln -sf $DOTFILEDIR/.config/nvim $HOME/.config/nvim
 
 if [[ $ostype == "Linux" ]] || [[ $ostype == *"CYGWIN"* ]]; then
 	echo Linux detected!
