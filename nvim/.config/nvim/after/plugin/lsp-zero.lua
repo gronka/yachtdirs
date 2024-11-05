@@ -1,3 +1,5 @@
+vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
+
 -- local zero = require('lsp-zero')
 
 -- require 'lspconfig'.dartls.setup({

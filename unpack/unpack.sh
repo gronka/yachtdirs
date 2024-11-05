@@ -16,11 +16,6 @@ ln -sf $DOTFILEDIR/.bash_profile $HOME/.bash_profile
 ln -sf $DOTFILEDIR/.bashrc $HOME/.bashrc
 ln -sf $DOTFILEDIR/.profile_common $HOME/.profile_common
 
-# mkdir -p $HOME/.config/nvim
-# mkdir -p $HOME/.config/nvim/after/plugin
-# ln -sfT $DOTFILEDIR/.config/nvim/after/plugin/lsp.lua $HOME/.config/nvim/after/plugin/lsp.lua
-ln -sf $DOTFILEDIR/.config/nvim $HOME/.config/nvim
-
 if [[ $ostype == "Linux" ]] || [[ $ostype == *"CYGWIN"* ]]; then
 	echo Linux detected!
 	echo linking .xinitrc and .Xdefaults
@@ -62,20 +57,7 @@ fi
 #ln -sf $DOTFILEDIR/uwsgirun $HOME/uwsgirun
 #ln -sf $DOTFILEDIR/gruntrun $HOME/gruntrun
 
-
-if [ ! -f $HOME/.vim/bundle/Vundle.vim ]; then
-	echo cloning vundle for vim
-	git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
-	echo run :PluginInstall in vim to complete setup
-else
-	echo vundle already installed... skipping
-fi
-echo Unpacking done!
-echo linking vimrc and co
-ln -sf $DOTFILEDIR/.vimrc $HOME/.vimrc
-ln -sf $DOTFILEDIR/.vimrc $HOME/.config/nvim/init.vim
 ln -sf $DOTFILEDIR/.tmux.conf $HOME/.tmux.conf
-
 
 echo ++++++++++++++++++++
 echo you might need to define export WIFI=wlpxxs0 in .profile_local
