@@ -1,7 +1,5 @@
 vim.opt.clipboard = 'unnamedplus'
 
-vim.cmd [[colorscheme tokyonight-night]]
-
 -- from Primeagen (for transparency, I think)
 -- function ColorMyPencils(color)
 -- 	color = color or "tokyonight-night"

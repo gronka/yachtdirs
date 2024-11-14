@@ -46,6 +46,7 @@ require('Comment').setup(
 	}
 )
 
+-- local colors = require("tokyonight.colors").setup()
 require("gronka.env")
 require("gronka.keybinds")
 require("gronka.remap")
