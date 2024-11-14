@@ -2,9 +2,10 @@
 -- vim.cmd("colorscheme tokyonight-night")
 
 require("nebulous").setup {
-	variant = "qasar",
 	-- variant = "twilight",
 	-- variant = "nova",
+	-- for daytime:
+	-- variant = "quasar",
 	--
 	-- variant = "midnight",
 	-- variant = "night",
