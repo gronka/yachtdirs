@@ -27,6 +27,9 @@ brew install python
 brew install neovim vim coreutils deno
 brew install cocoapods virtualenvwrapper postgresql
 
+brew install alacritty
+brew install --cask font-bitstream-vera-sans-mono-nerd-font
+
 # npm config set prefix '~/.npm-global'
 
 # npm install -g npm yarn
