@@ -355,8 +355,9 @@ alias unz='cd /gm/fridayy/uno/zinc'
 alias uz=unz
 
 #export GOPRIVATE=gitlab.com/textfridayy/*
-#alias zkubeinitpal='export KUBECONFIG=/gm/sh/pal-kubeconfig.yaml'
-#alias zkubeinitracher='export KUBECONFIG=~/.kube/config-racher.yaml'
+alias zkubeinitdjango='export KUBECONFIG=~/.kube/config-django.yaml'
+alias zkubeinitpal='export KUBECONFIG=/gm/sh/pal-kubeconfig.yaml'
+alias zkubeinitracher='export KUBECONFIG=~/.kube/config-racher.yaml'
 
 alias fu='cd /gm/fridayy/funo'
 alias fl='cd /gm/fridayy/funo/fui_lib/lib'
