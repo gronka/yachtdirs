@@ -354,6 +354,15 @@ alias ux=unx
 alias unz='cd /gm/fridayy/uno/zinc'
 alias uz=unz
 
+alias wi='cd /gm/wisk/wisk'
+alias wid='cd /gm/wisk/wisk/deployment'
+alias widp='cd /gm/wisk/wisk/deployment/postgres'
+alias widq='cd /gm/wisk/wisk/deployment/rabbitmq'
+alias widr='cd /gm/wisk/wisk/deployment/redis'
+alias wiw='cd /gm/wisk/wisk/src/wisk'
+alias wig='cd /gm/wisk/wisk/src/gad'
+alias wigg='cd /gm/wisk/wisk/src/gad/gad'
+
 #export GOPRIVATE=gitlab.com/textfridayy/*
 alias zkubeinitdjango='export KUBECONFIG=~/.kube/config-django.yaml'
 alias zkubeinitpal='export KUBECONFIG=/gm/sh/pal-kubeconfig.yaml'
