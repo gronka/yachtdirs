@@ -110,9 +110,9 @@ vim.cmd [[set guioptions-=l]]
 vim.cmd [[set guioptions-=r]] -- no right hand scrollbar
 vim.cmd [[set guioptions-=b]]
 vim.cmd [[set guioptions-=m]]
-vim.cmd [[set guioptions-=T]]    -- remove toolbar
-vim.cmd [[set guioptions-=L]]    -- remove left-hand scrollbar when v-split
-vim.cmd [[set guioptions+=c]]    -- use console dialogs when possible
+vim.cmd [[set guioptions-=T]] -- remove toolbar
+vim.cmd [[set guioptions-=L]] -- remove left-hand scrollbar when v-split
+-- vim.cmd [[set guioptions+=c]]    -- use console dialogs when possible
 vim.cmd [[set guioptions-=e]]
 vim.cmd [[set visualbell t_vb=]] -- turn off flashing (needs to be in gvimrc too)
 vim.cmd [[highlight Cursor guifg=white guibg=black]]
