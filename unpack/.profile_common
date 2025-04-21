@@ -1,3 +1,5 @@
+TS_START=$(date +%s%3N)
+echo .profile_common start $SECONDS
 ostype=$(uname)
 if [ $ostype == "Darwin" ]; then
 	export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
@@ -8,7 +10,7 @@ if [ $ostype == "Darwin" ]; then
 	export CHROME_EXECUTABLE="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 
 	export NVM_DIR="$HOME/.nvm"
-	source $(brew --prefix nvm)/nvm.sh
+	# source $(brew --prefix nvm)/nvm.sh
 else
 	# flutter
 	export ANDROID_HOME=$HOME/Android/Sdk
@@ -49,6 +51,8 @@ fi
 # fix qt scaling for hidpi for hidpi apps such as vlc
 export QT_AUTO_SCREEN_SCALE_FACTOR=0
 export QT_SCREEN_SCALE_FACTORS=1
+
+echo entry vars $SECONDS
 
 # Enable UTF-8
 export LC_ALL="en_US.UTF-8"
@@ -470,6 +474,8 @@ export PATH=$HOME/yachtdirs/bin:$PATH
 export DENO_INSTALL="$HOME/deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
+echo set aliases and paths done $SECONDS
+
 myyoutube() {
 	yt-dlp $1 -o '~/Downloads/yc/%(uploader)s/%(upload_date)s %(title)s-%(id)s.%(ext)s' --write-thumbnail --write-description --cookies '~/junk/yt_cookies.txt'
 }
@@ -523,7 +529,6 @@ sshl() {
 	fi
 }
 
-
 ###
 ## python virtual envs
 ###
@@ -563,8 +568,11 @@ fi
 . $HOME/yachtdirs/unpack/git-completion.bash
 . $HOME/yachtdirs/unpack/docker-completion.bash
 
+echo about to set profile local $SECONDS
+
 if [ -f $HOME/.profile_local ]; then
 	. $HOME/.profile_local
 fi
+# [[ -f ~/.profile_common ]] && source ~/.profile_common
 
 alias panoply="java -jar /Applications/Panoply.app/Contents/Java/Panoply.jar"
