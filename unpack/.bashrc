@@ -127,7 +127,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-echo about to source profile_common $SECONDS
-source ~/.profile_common
-
 echo finish .bashrc $SECONDS
+echo next: .bash_profile $SECONDS
+source ~/.bash_profile
+echo finish .bashrc $SECONDS
+echo next: .profile_common $SECONDS
+source ~/.profile_common
